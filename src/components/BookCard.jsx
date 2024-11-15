@@ -13,7 +13,6 @@ export function BookCard({name, autor, bookId, userId, coverImage}) {
   
   const $popupReserveVisible = useStore(popupReserveVisible);
   const $currentBookData = useStore(currentBookData);
-  console.log("todos los bacl dicks")
   console.log({name, autor, bookId, userId, coverImage})
 
   function handleClick() {

@@ -1,0 +1,8 @@
+.fullscreen {
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  z-index: 1000;
+  width: 100%;
+  background-color: #34343475;
+}

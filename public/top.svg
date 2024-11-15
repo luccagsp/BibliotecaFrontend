@@ -1,0 +1,30 @@
+<svg width="48" height="108" viewBox="0 0 48 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_26_2009)">
+<rect width="40" height="100" transform="translate(4)" fill="#EFEFEF"/>
+<rect x="42" y="100" width="100" height="1" transform="rotate(-90 42 100)" fill="#B4B4B4"/>
+<rect x="39" y="100" width="100" height="1" transform="rotate(-90 39 100)" fill="#B4B4B4"/>
+<rect x="36" y="100" width="100" height="1" transform="rotate(-90 36 100)" fill="#B4B4B4"/>
+<rect x="33" y="100" width="100" height="1" transform="rotate(-90 33 100)" fill="#B4B4B4"/>
+<rect x="30" y="100" width="100" height="1" transform="rotate(-90 30 100)" fill="#B4B4B4"/>
+<rect x="27" y="100" width="100" height="1" transform="rotate(-90 27 100)" fill="#B4B4B4"/>
+<rect x="24" y="100" width="100" height="1" transform="rotate(-90 24 100)" fill="#B4B4B4"/>
+<rect x="21" y="100" width="100" height="1" transform="rotate(-90 21 100)" fill="#B4B4B4"/>
+<rect x="18" y="100" width="100" height="1" transform="rotate(-90 18 100)" fill="#B4B4B4"/>
+<rect x="15" y="100" width="100" height="1" transform="rotate(-90 15 100)" fill="#B4B4B4"/>
+<rect x="12" y="100" width="100" height="1" transform="rotate(-90 12 100)" fill="#B4B4B4"/>
+<rect x="9" y="100" width="100" height="1" transform="rotate(-90 9 100)" fill="#B4B4B4"/>
+<rect x="6" y="100" width="100" height="1" transform="rotate(-90 6 100)" fill="#B4B4B4"/>
+</g>
+<defs>
+<filter id="filter0_d_26_2009" x="0" y="0" width="48" height="108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_26_2009"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_26_2009" result="shape"/>
+</filter>
+</defs>
+</svg>

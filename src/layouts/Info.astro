@@ -1,0 +1,65 @@
+---
+interface Props {
+	title: string;
+
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="relative">
+		<div class="noise">
+		</div>
+    <div class="md:w-[60vw] mx-auto h-full bg-none w-[100vw]">
+      <main class="container mx-auto flex justify-start h-full items-center flex-col bg-none">
+        <div class="h-[153px] mt-20">
+          <img id="head" src="/fronts/image.svg" class="max-w-24 z-20" alt="">
+        </div>
+        
+        <h1 class="text-6xl font-[Aclonica] my-28 text-[#333]">{title}</h1>
+        <div class="cont w-full">
+          <slot />
+        </div>
+      </main>
+    </div>
+		
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+	:root{
+		--proyects: #FF8B36;
+		--text: #
+	}
+	body{
+		font-family: 'Montserrat', sans-serif;
+		color: #333333;
+	}
+	.noise{
+		position: fixed;
+		height: 100vh;
+		z-index: 1000;
+		width: 100%;
+		opacity: 0.05;
+		pointer-events: none;
+		background-image: url('/noise.gif');
+	}
+  #head{
+    filter: grayscale(100%);
+  }
+  header{
+    backdrop-filter: blur(12px);
+  }
+</style>
+

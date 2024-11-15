@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Lucca dev">
+	<main class="container mx-auto flex justify-center items-center flex-col bg-none relative w-screen">
+    <h1 class="text-6xl font-bold my-8">Registro</h1>
+    <form class="w-screen sm:w-auto px-5">
+      <div class="mb-6">
+        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nombre y apellido</label>
+        <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required />
+      </div>
+      <div class="mb-6">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Correo electronico</label>
+        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="john.doe@escuelasproa.edu.ar" required />
+        <p class="text-sm h-[20px]" id="message">
+
+        </p>
+      </div> 
+      <div class="mb-6">
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Cotraseña</label>
+          <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="•••••••••" required />
+      </div> 
+      <div class="mb-6">
+          <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-900 ">Confirmar contraseña</label>
+          <input type="password" id="confirm_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="•••••••••" required />
+      </div> 
+      <button type="submit" id="submit-register" class="w-full sm:w-[400px] text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Registrar</button>
+    </form>
+  </main>
+</Layout>
+
+<script>
+  
+  const submit = document.getElementById('submit-register')
+
+  const name = document.getElementById('name') as HTMLInputElement
+  const email = document.getElementById('email') as HTMLInputElement
+  const password = document.getElementById('password') as HTMLInputElement
+  const confirm_password = document.getElementById('confirm_password') as HTMLInputElement
+  const message = document.getElementById('message')
+  const allowedDomains = ['escuelasproa.edu.ar'];
+
+  async function checkRegister(event) {
+    event.preventDefault(); // Evita que la página se recargue
+    if(!(password.value === confirm_password.value)){
+      return
+    }
+    if(name.value=="" || email.value=="" || password.value=="" ||confirm_password.value=="") {
+      return
+    }
+    const inputValue = email.value;
+
+    // Verificar si el dominio ingresado está en la lista de permitidos
+    const domain = email.value.split('@')[1]; // Extraer el dominio
+    if (allowedDomains.includes(domain)) {
+        message.textContent = '';
+    } else {
+        message.textContent = "La cuenta debe ser de dominio '@escuelasproa.edu.ar'";
+        message.style.color = 'red';
+        return
+    }
+    registerUser()
+  }
+  async function registerUser() {
+    const loggedUser = await fetch(`http://localhost:3000/api/auth/register`,{
+      mode: 'cors',
+      credentials: "include",
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email:`${email.value}`, password:`${password.value}`, name: `${name.value}`
+    })
+  }).then(res => res.json())
+  if (!loggedUser.token) {
+    return
+  }
+  window.location.href = "/";
+  }
+
+  submit.addEventListener('click', checkRegister)
+
+
+</script>

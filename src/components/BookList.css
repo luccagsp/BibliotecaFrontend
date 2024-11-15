@@ -1,0 +1,11 @@
+.grilla{
+  width: 80dvw;
+  height: auto;
+  display: grid;
+  gap: 5px;
+}
+@media (min-width: 640px) {
+  .grilla{
+    width: 60dvw;
+  }
+}

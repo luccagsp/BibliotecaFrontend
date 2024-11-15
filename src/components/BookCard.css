@@ -1,0 +1,15 @@
+.book{
+  background-color: rebeccapurple;
+  aspect-ratio: 1/1.5;
+  width: 100%;
+  height: auto;
+}
+.book-dos{
+  background-color: red;
+  aspect-ratio: 1/1.5;
+  width: 100%;
+  height: auto;
+}
+.grilla-div{
+  grid-template-rows: 2fr 1fr;
+}
